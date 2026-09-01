@@ -1,7 +1,7 @@
 ---
-name: company-intel-router
+name: auto-analysis
 description: >
-  Company intelligence analysis router. Automatically determines a target company's listing status and product profile,
+  Autonomous company analysis engine. Automatically determines a target company's listing status and product profile,
   then dispatches to the appropriate specialist framework: AI Product Tasting (product teardown),
   IPO Archaeology (prospectus analysis), or both combined with cross-verification synthesis.
   ALWAYS use this skill when the user wants to: comprehensively analyze a tech/AI company,
@@ -11,11 +11,11 @@ description: >
   or only IPO/financial-focused (use ipo-archaeology).
 ---
 
-# Company Intelligence Router
+# Auto Analysis
 
-An orchestration skill that automatically determines the best analysis approach for a target company by assessing its public listing status and product profile, then dispatches to the appropriate specialist framework(s).
+An autonomous analysis engine that determines the best approach for a target company by assessing its public listing status and product profile, then dispatches to the appropriate specialist framework(s) and synthesizes the results.
 
-This skill references two specialist skills in the same repository:
+This skill orchestrates two specialist skills in the same repository:
 - **AI Product Tasting** (`skills/ai-product-tasting/SKILL.md`) — 5-phase product deep dive
 - **IPO Archaeology** (`skills/ipo-archaeology/SKILL.md`) — 6-module prospectus analysis
 

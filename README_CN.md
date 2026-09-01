@@ -1,4 +1,4 @@
-# 🔍 Company Intelligence（企业全景分析）
+# 🔬 AI Business Anatomy（AI 商业解剖）
 
 一套三合一的 AI 分析技能包——覆盖产品拆解、招股书考古、以及两者的交叉验证。
 
@@ -12,11 +12,11 @@
 |-------|--------|----------|
 | **AI Product Tasting（AI 产品品鉴）** | 5 阶段产品深度拆解：WHY → HOW → INTERACTION → LANDSCAPE → FRAMEWORK | 分析任何 AI 产品的设计决策、技术实现、交互设计和竞争格局 |
 | **IPO Archaeology（招股书考古）** | 6 模块招股书分析：赛道定义 → 竞争感知 → 风险预判 → 商业模式 → 治理结构 → 募资用途 | 通过上市材料研究一家公司的战略演化和商业判断力 |
-| **Company Intel Router（路由器）** | 自动检测公司上市状态和产品特征，智能调度上面两个 skill | 当你想全面分析一家公司但不确定用哪个框架时 |
+| **Auto Analysis（自主分析）** | 自动检测公司上市状态和产品特征，智能调度上面两个 skill 并综合输出 | 当你想全面分析一家公司，让 AI 自己决定最佳分析路径时 |
 
-## 路由器：怎么工作的
+## Auto Analysis：怎么工作的
 
-你只需要说出一家公司的名字。路由器会检查两件事——有没有上市材料？有没有值得分析的产品？——然后自动选择分析模式：
+你只需要说出一家公司的名字。Auto Analysis 会检查两件事——有没有上市材料？有没有值得分析的产品？——然后自动选择分析模式：
 
 | 模式 | 什么情况 | 你会得到什么 |
 |------|---------|------------|
@@ -26,22 +26,61 @@
 
 结合模式是最有价值的——它能发现任何单一框架都看不到的洞察，比如招股书里承诺的战略方向和产品实际演化之间的矛盾。
 
+## 安装
+
+### 下载完整套件（推荐）
+
+```bash
+git clone https://github.com/D1One-hue/ai-business-anatomy.git
+```
+
+### 只下载单个 skill
+
+如果你只需要其中一个 skill，可以用 `curl` 单独下载：
+
+**只要 AI Product Tasting：**
+```bash
+mkdir -p ai-product-tasting && \
+curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/ai-product-tasting/SKILL.md \
+  -o ai-product-tasting/SKILL.md
+```
+
+**只要 IPO Archaeology：**
+```bash
+mkdir -p ipo-archaeology && \
+curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/ipo-archaeology/SKILL.md \
+  -o ipo-archaeology/SKILL.md
+```
+
+**只要 Auto Analysis**（如果其他两个 skill 在同一个 `skills/` 目录下，它会自动引用）：
+```bash
+mkdir -p auto-analysis && \
+curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/auto-analysis/SKILL.md \
+  -o auto-analysis/SKILL.md
+```
+
+### 作为 Claude Skill 使用
+
+把 `skills/` 文件夹（或单个 skill 文件夹）放到你的 Claude skills 目录下。Auto Analysis 会在综合性公司分析请求时自动触发；单个 skill 在针对产品或招股书的请求时触发。
+
+### 配合任何 AI 助手
+
+把相关的 `SKILL.md` 内容复制到 system prompt 里，或者在对话开头粘贴。做综合分析时，把三个 skill 都放进去。
+
 ## 核心分析框架
 
-### 三维竞争框架（来自产品品鉴）
+### 三维竞争框架（来自 Product Tasting）
 
 在三个轴上评估 AI 产品竞争格局：
 - **模型能力** — 推理、编码、分析的硬实力
 - **上下文密度** — AI 能原生访问多少用户/组织数据
 - **生态开放度** — 连接第三方工具的难易程度
 
-没有任何一家在三个维度上同时领先。差距揭示了每家的战略赌注。
-
-### 失踪竞争者模式（来自招股书考古）
+### 失踪竞争者模式（来自 IPO Archaeology）
 
 最危险的竞争威胁往往来自招股书里根本没有提到的公司。识别谁"不在名单上"比分析谁在名单上更有价值。
 
-### 交叉验证（来自结合模式）
+### 交叉验证（来自 Auto Analysis 结合模式）
 
 当产品分析和招股书分析叠加在一起：
 - 产品架构是否真的支撑了招股书里声称的商业模式？
@@ -51,7 +90,7 @@
 ## 仓库结构
 
 ```
-company-intel/
+ai-business-anatomy/
 ├── README.md                                    # 英文版
 ├── README_CN.md                                 # 中文版（本文件）
 └── skills/
@@ -59,23 +98,13 @@ company-intel/
     │   └── SKILL.md                             # 产品分析框架
     ├── ipo-archaeology/
     │   └── SKILL.md                             # 招股书分析框架
-    ├── company-intel-router/
-    │   └── SKILL.md                             # 路由调度器
+    ├── auto-analysis/
+    │   └── SKILL.md                             # 自主分析引擎
     └── references/
         └── claude-tag-case-study.md             # 案例：Claude Tag 分析
 ```
 
-## 怎么用
-
-### 作为 Claude Skill
-
-把 `skills/` 文件夹放到你的 Claude skills 目录下。路由器会在综合性公司分析请求时自动触发；单个 skill 在针对产品或招股书的请求时触发。
-
-### 配合任何 AI 助手
-
-把相关的 `SKILL.md` 内容复制到 system prompt 里，或者在对话开头粘贴。做综合分析时，把三个 skill 都放进去。
-
-### 示例提示词
+## 示例提示词
 
 ```
 帮我全面分析一下宇树科技
@@ -92,7 +121,7 @@ company-intel/
 
 ## 来源故事
 
-这套框架诞生于一次对 Claude Tag（Anthropic 的 Slack 共享 AI 队友）的多轮深度产品研究。分析覆盖了 Anthropic 的产品时间线、Claude Tag 的记忆/环境感知/多人协作架构、竞品格局以及战略启示。整个过程被提炼为可复用的分析框架，并与招股书分析方法论结合，形成了完整的企业全景分析工具包。
+这套框架诞生于一次对 Claude Tag（Anthropic 的 Slack 共享 AI 队友）的多轮深度产品研究。分析覆盖了 Anthropic 的产品时间线、Claude Tag 的记忆/环境感知/多人协作架构、竞品格局以及战略启示。整个过程被提炼为可复用的分析框架，并与招股书分析方法论结合，形成了完整的 AI 商业解剖工具包。
 
 ## 许可
 
