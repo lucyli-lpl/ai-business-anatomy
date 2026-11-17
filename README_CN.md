@@ -31,7 +31,7 @@
 ### 下载完整套件（推荐）
 
 ```bash
-git clone https://github.com/D1One-hue/ai-business-anatomy.git
+git clone https://github.com/lucyli-lpl/ai-business-anatomy.git
 ```
 
 ### 只下载单个 skill
@@ -41,21 +41,21 @@ git clone https://github.com/D1One-hue/ai-business-anatomy.git
 **只要 AI Product Tasting：**
 ```bash
 mkdir -p ai-product-tasting && \
-curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/ai-product-tasting/SKILL.md \
+curl -sL https://raw.githubusercontent.com/lucyli-lpl/ai-business-anatomy/main/skills/ai-product-tasting/SKILL.md \
   -o ai-product-tasting/SKILL.md
 ```
 
 **只要 IPO Archaeology：**
 ```bash
 mkdir -p ipo-archaeology && \
-curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/ipo-archaeology/SKILL.md \
+curl -sL https://raw.githubusercontent.com/lucyli-lpl/ai-business-anatomy/main/skills/ipo-archaeology/SKILL.md \
   -o ipo-archaeology/SKILL.md
 ```
 
 **只要 Auto Analysis**（如果其他两个 skill 在同一个 `skills/` 目录下，它会自动引用）：
 ```bash
 mkdir -p auto-analysis && \
-curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/auto-analysis/SKILL.md \
+curl -sL https://raw.githubusercontent.com/lucyli-lpl/ai-business-anatomy/main/skills/auto-analysis/SKILL.md \
   -o auto-analysis/SKILL.md
 ```
 
@@ -129,4 +129,4 @@ MIT — 随意使用。
 
 ---
 
-*由 [D1One-hue](https://github.com/D1One-hue) 构建 · Powered by a conversation with Claude*
+*由 [Lucy Li](https://github.com/lucyli-lpl) 构建 · Powered by a conversation with Claude*

@@ -31,7 +31,7 @@ Combined Mode is where things get interesting — it finds insights that neither
 ### Download the full suite (recommended)
 
 ```bash
-git clone https://github.com/D1One-hue/ai-business-anatomy.git
+git clone https://github.com/lucyli-lpl/ai-business-anatomy.git
 ```
 
 ### Download a single skill only
@@ -41,21 +41,21 @@ If you only need one skill, you can download it individually using `curl`:
 **AI Product Tasting only:**
 ```bash
 mkdir -p ai-product-tasting && \
-curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/ai-product-tasting/SKILL.md \
+curl -sL https://raw.githubusercontent.com/lucyli-lpl/ai-business-anatomy/main/skills/ai-product-tasting/SKILL.md \
   -o ai-product-tasting/SKILL.md
 ```
 
 **IPO Archaeology only:**
 ```bash
 mkdir -p ipo-archaeology && \
-curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/ipo-archaeology/SKILL.md \
+curl -sL https://raw.githubusercontent.com/lucyli-lpl/ai-business-anatomy/main/skills/ipo-archaeology/SKILL.md \
   -o ipo-archaeology/SKILL.md
 ```
 
 **Auto Analysis only** (will reference the other two skills if they're in the same `skills/` directory):
 ```bash
 mkdir -p auto-analysis && \
-curl -sL https://raw.githubusercontent.com/D1One-hue/ai-business-anatomy/main/skills/auto-analysis/SKILL.md \
+curl -sL https://raw.githubusercontent.com/lucyli-lpl/ai-business-anatomy/main/skills/auto-analysis/SKILL.md \
   -o auto-analysis/SKILL.md
 ```
 
@@ -129,4 +129,4 @@ MIT — use it however you like.
 
 ---
 
-*Built by [D1One-hue](https://github.com/D1One-hue) · Powered by a conversation with Claude*
+*Built by [Lucy Li](https://github.com/lucyli-lpl) · Powered by a conversation with Claude*
